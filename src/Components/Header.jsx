@@ -19,6 +19,9 @@ export default function Header() {
   const handleProfileClick = () => {
     navigate("/profile");
   };
+  const handleLogOutClick = () => {
+    navigate("/");
+  };
 
   return (
     <div className="flex bg-sky-700 sticky top-0 z-40 h-24">
@@ -39,8 +42,8 @@ export default function Header() {
         </ul>
       </div>
 
-      <button className="ml-96 mt-8 bg-sky-500 w-36 h-8 text-white rounded ">
-        Contact
+      <button className="ml-96 mt-8 bg-sky-500 w-36 h-8 text-white rounded " onClick={handleLogOutClick} >
+        Sign Out
       </button>
     </div>
   );

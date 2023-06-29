@@ -1,22 +1,3 @@
-// import React from "react";
- 
-
-// import Header from "../Components/Header";
-// import Landing from "../Components/Landing";
-
-// export default function Home() {
-  
-
-//   return (
-//     <div>
-//       <Header />
-//       <Landing />
-      
-//     </div>
-//   );
-// }
-
-
 import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import Landing from "../Components/Landing";
