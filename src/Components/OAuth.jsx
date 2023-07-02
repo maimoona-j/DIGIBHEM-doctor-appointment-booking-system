@@ -33,7 +33,7 @@ export default function OAuth() {
         navigate("/home");
       }  catch (error) {
         console.log("Something went wrong with the registration:", error);
-        // or handle the error appropriately
+         
       }
     }
 
