@@ -16,33 +16,35 @@ export default function Welcome() {
 
   return (
     <div
-      className="flex justify-center items-center h-screen overflow-hidden font-euclid-circular-a"
+      className="flex justify-center items-center h-screen overflow-hidden font-euclid-circular-a bg-cover bg-center"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(${bg1})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
       }}
     >
       <div className="text-center">
-        <img src={logo} alt="Logo" className="mx-auto ml-56   mb-12" />
-        <div className="mb-6  text-white  ">
-          <h1 className=" text-3xl tracking-wider font-bold ">
+        <div className="w-96 mx-auto mb-12">
+          <img src={logo} alt="Logo" />
+        </div>
+
+        <div className="mb-6 text-white">
+          <h1 className="text-3xl tracking-wider font-bold ">
             Welcome to iCarePro
           </h1>
-          <p className="font-lg">Login or sign up to continue</p>
+          <p className="text-lg">Login or sign up to continue</p>
         </div>
-        <div className="space-x-1/3">
+
+        <div className="flex flex-wrap justify-center">
           <button
             type="submit"
-            className="mr-4 bg-sky-500 w-24 px-8 py-2 rounded text-white w-36 text-center shadow-md"
+            className="mr-2 mb-2 sm:mr-4 bg-sky-500 px-4 py-2 rounded text-white shadow-md w-24 sm:w-36 h-[40px]"
             onClick={handleLoginClick}
           >
             Signin
           </button>
+
           <button
             type="submit"
-            className="mr-4 bg-sky-500 w-24 px-4 py-2 rounded text-white w-36 text-center shadow-md"
+            className="bg-sky-500 px-4 py-2 rounded text-white shadow-md w-24 sm:w-36 h-[40px]"
             onClick={handleSignupClick}
           >
             Signup

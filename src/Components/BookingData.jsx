@@ -25,7 +25,7 @@ export default function BookingData({
   };
 
   return (
-    <div className="border border-black mx-auto w-1/2 p-4 mt-4 mb-4">
+    <div className="border border-black mx-auto w-11/12 md:w-1/2 p-4 mt-4 mb-4">
       <h2 className="text-lg font-bold mb-2">Booking Profile</h2>
       <div>
         <p>
@@ -57,7 +57,7 @@ export default function BookingData({
         </p>
       </div>
       <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 ml-5 mt-4 rounded"
+        className="bg-blue-500 hover:bg-blue-600 text-white w-56 font-bold py-2 px-4 mt-4 md:ml-5 rounded"
         onClick={onEditAppointment}
       >
         Edit Appointment
@@ -66,8 +66,8 @@ export default function BookingData({
       {!showConfirmation && (
         <div>
           <button
-            className="bg-red-500 hover:bg-blue-600 text-white font-bold py-2 ml-4 mt-3 px-4 rounded"
-            onClick={(e) => handleCancelAppointment(e)}
+            className="bg-red-500 hover:bg-red-600 text-white w-56 font-bold py-2 mt-3 md:ml-5 rounded"
+            onClick={handleCancelAppointment}
           >
             Cancel
           </button>

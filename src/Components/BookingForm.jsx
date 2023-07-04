@@ -58,7 +58,7 @@ export default function BookingForm() {
   };
 
   return (
-    <div className="border border-black mx-auto w-1/2 p-4 mt-4 mb-4">
+    <div className="border border-black mx-auto w-11/12 md:w-1/2 p-4 mt-4 mb-4">
       {!isBookingConfirmed && (
         <form onSubmit={handleSubmit}>
           <div className="my-4">
@@ -191,7 +191,7 @@ export default function BookingForm() {
 
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold ml-56 py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded md:ml-56 mt-4 md:mt-0"
           >
             Confirm Booking
           </button>

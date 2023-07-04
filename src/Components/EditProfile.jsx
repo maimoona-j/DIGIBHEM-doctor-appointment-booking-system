@@ -138,13 +138,15 @@ export default function EditProfile() {
             />
           </div>
 
-          <button
-            type="button"
-            onClick={handleUpdateProfile}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-          >
-            Save
-          </button>
+          <div className="flex justify-center">
+            <button
+              type="button"
+              onClick={handleUpdateProfile}
+              className="bg-blue-500 hover:bg-blue-600 w-56 text-white font-bold py-2 px-4 rounded"
+            >
+              Save
+            </button>
+          </div>
         </form>
       </div>
     </div>

@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DocListing from "../Components/DocListing";
 import Header from "../Components/Header";
+import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 export default function DoctorInfo() {
   const [showAll, setShowAll] = useState(false);
   const [showOnline, setShowOnline] = useState(false);
+  const [doctorProfile, setDoctorProfile] = useState([]);
 
   const handleCheckboxChange = (checkboxName) => {
     if (checkboxName === "showAll") {
@@ -16,37 +19,52 @@ export default function DoctorInfo() {
     }
   };
 
+  useEffect(() => {
+    const fetchDoctorProfile = async () => {
+      try {
+        const doctorProfileRef = collection(db, "Doctor Profile");
+        const snapshot = await getDocs(doctorProfileRef);
+
+        const doctorData = [];
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          const doctor = {
+            fullName: data.Name,
+            time: data.time,
+            status: data.status,
+            fee: data.fee,
+            image: data.image,
+          };
+          doctorData.push(doctor);
+        });
+
+        setDoctorProfile(doctorData);
+        console.log("Doctor Profile:", doctorData);
+      } catch (error) {
+        console.error("Error fetching doctor profile:", error);
+      }
+    };
+
+    fetchDoctorProfile();
+  }, []);
+
+  const filteredDoctorProfile = showOnline
+    ? doctorProfile.filter((doctor) => doctor.status.toLowerCase() === "online")
+    : showAll
+    ? doctorProfile
+    : [];
+
   return (
     <div>
       <Header />
-      <div className="text-center mb-36">
+      <div className="text-center">
         <div className="text-black">
           <h4 className="mb-6 text-xl tracking-wider mt-10 font-bold">
             Find and book the best doctors near you
           </h4>
 
-          <select className="w-96 h-12 rounded-lg px-4 text-black border border-black bg-white mb-4">
-            <option value="">Select Location</option>
-            <option value="US">US</option>
-            <option value="Canada">Canada</option>
-            <option value="UK">UK</option>
-            <option value="Australia">Australia</option>
-            <option value="Germany">Germany</option>
-            <option value="Russia">Russia</option>
-          </select>
-
-          <select className="w-96 h-12 rounded-lg ml-4 px-4 border text-black border-black bg-white mb-4">
-            <option value="">Select Speciality</option>
-            <option value="gynecologist">Gynecologist</option>
-            <option value="skin_specialist">Skin Specialist</option>
-            <option value="child_specialist">Child Specialist</option>
-            <option value="neurologist">Neurologist</option>
-            <option value="gastroenterologist">Gastroenterologist</option>
-            <option value="heart_specialist">Heart Specialist</option>
-          </select>
-
-          <div className="flex items-center justify-center mb-4">
-            <label className="text-black mr-2">
+          <div className="flex items-center justify-center flex-wrap mb-2">
+            <label className="text-black mr-2 flex items-center">
               <input
                 type="checkbox"
                 checked={showAll}
@@ -55,7 +73,7 @@ export default function DoctorInfo() {
               />
               All
             </label>
-            <label className="text-black">
+            <label className="text-black flex items-center">
               <input
                 type="checkbox"
                 checked={showOnline}
@@ -65,19 +83,14 @@ export default function DoctorInfo() {
               Online
             </label>
           </div>
-
-          <button className="bg-sky-500 w-36 p-3 rounded text-center">
-            Search
-          </button>
         </div>
       </div>
 
-      <DocListing />
-      <DocListing />
-      <DocListing />
-      <DocListing />
-      <DocListing />
-      <DocListing />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4 mt-2">
+        {filteredDoctorProfile.map((doctor) => (
+          <DocListing key={doctor.fullName} doctorData={doctor} />
+        ))}
+      </div>
     </div>
   );
 }

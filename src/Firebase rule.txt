@@ -38,3 +38,16 @@ service firebase.storage {
   }
 }
 
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /Doctor Profile/{document} {
+      allow read, create: if true;
+    }
+    match /{document=**} {
+      allow read: if false;
+      allow write: if false;
+    }
+  }
+}

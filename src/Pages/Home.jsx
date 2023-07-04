@@ -10,7 +10,7 @@ export default function Home() {
 
     const timer = setTimeout(() => {
       setShowWelcome(false);
-    }, 5000); // Adjust the duration (in milliseconds) as needed
+    }, 5000);  
 
     return () => clearTimeout(timer);
   }, []);

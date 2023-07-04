@@ -25,31 +25,11 @@ export default function Landing() {
               Find and book the best doctors near you
             </h1>
 
-            <select className="w-96 h-12 rounded-lg px-4 text-black border border-black bg-white mb-4">
-              <option value="">Select Location</option>
-              <option value="US">US</option>
-              <option value="Canada">Canada</option>
-              <option value="UK">UK</option>
-              <option value="Australia">Australia</option>
-              <option value="Germany">Germany</option>
-              <option value="Russia">Russia</option>
-            </select>
-
-            <select className="w-96 h-12 rounded-lg px-4 border text-black border-black bg-white mb-4">
-              <option value="">Select Speciality</option>
-              <option value="gynecologist">Gynecologist</option>
-              <option value="skin_specialist">Skin Specialist</option>
-              <option value="child_specialist">Child Specialist</option>
-              <option value="neurologist">Neurologist</option>
-              <option value="gastroenterologist">Gastroenterologist</option>
-              <option value="heart_specialist">Heart Specialist</option>
-            </select>
-
             <button
               className="bg-sky-500 w-36 p-3 rounded text-center"
               onClick={handleDoctorClick}
             >
-              Search
+              Discover now
             </button>
           </div>
         </div>

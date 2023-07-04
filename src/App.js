@@ -6,7 +6,7 @@ import Welcome from "./Pages/Welcome";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import ForgotPassword from "./Pages/ForgotPassword"; 
-import Home from "./Pages/Home"; // Import the ForgotPassword component
+import Home from "./Pages/Home";  
 import DoctorInfo from "./Pages/DoctorInfo";
 import MyAccount from "./Pages/MyAccount";
 import ConfirmBooking from "./Pages/ConfirmBooking";
