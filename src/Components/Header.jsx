@@ -60,19 +60,19 @@ export default function Header() {
           <div className="bg-sky-700 absolute mt-10 w-36 right-4 rounded shadow-md">
             <ul className="py-2">
               <li
-                className="px-4 py-2 cursor-pointer hover:bg-sky-600"
+                className="px-4 py-2 cursor-pointer text-white hover:bg-sky-600"
                 onClick={handleHomeClick}
               >
                 Home
               </li>
               <li
-                className="px-4 py-2 cursor-pointer hover:bg-sky-600"
+                className="px-4 py-2 cursor-pointer text-white hover:bg-sky-600"
                 onClick={handleDoctorClick}
               >
                 Doctor
               </li>
               <li
-                className="px-4 py-2 cursor-pointer hover:bg-sky-600"
+                className="px-4 py-2 cursor-pointer text-white hover:bg-sky-600"
                 onClick={handleProfileClick}
               >
                 My Account
