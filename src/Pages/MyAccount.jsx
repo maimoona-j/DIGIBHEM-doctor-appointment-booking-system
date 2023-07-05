@@ -23,13 +23,13 @@ export default function MyAccount() {
 
   const handleConfirmBooking = (data) => {
     setBookingData(data);
-    setShowBookingForm(true); // Hide the booking form
-    setShowConfirmed(true); // Show the confirmed component
+    setShowBookingForm(true);  
+    setShowConfirmed(true);  
   };
 
   const handleCancelAppointment = () => {
-    setShowBookingForm(false); // Show the booking form again
-    setShowConfirmed(false); // Hide the confirmed component
+    setShowBookingForm(false);  
+    setShowConfirmed(false);  
   };
 
   const handleUpdateProfile = (data) => {
@@ -87,3 +87,5 @@ export default function MyAccount() {
     </div>
   );
 }
+
+ 

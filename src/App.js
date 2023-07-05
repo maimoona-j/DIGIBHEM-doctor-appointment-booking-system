@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
+ 
+
 // pages
 import Welcome from "./Pages/Welcome";
 import SignIn from "./Pages/SignIn";
@@ -29,3 +31,8 @@ function App() {
 }
 
 export default App;
+
+
+
+
+ 
