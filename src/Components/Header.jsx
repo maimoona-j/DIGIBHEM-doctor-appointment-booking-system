@@ -83,7 +83,7 @@ export default function Header() {
       </div>
 
       <div className="hidden md:flex ml-auto">
-        <ul className="flex mt-8 cursor-pointer text-white">
+        <ul className="flex mt-8 cursor-pointer text-white ">
           <li className="" onClick={handleHomeClick}>
             Home
           </li>

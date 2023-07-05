@@ -26,7 +26,7 @@ export default function Landing() {
             </h1>
 
             <button
-              className="bg-sky-500 w-36 p-3 rounded text-center"
+              className="bg-sky-500  hover:bg-sky-700 w-36 p-3 rounded text-center"
               onClick={handleDoctorClick}
             >
               Discover now

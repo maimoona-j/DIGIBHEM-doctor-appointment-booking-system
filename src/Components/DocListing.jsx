@@ -15,11 +15,11 @@ export default function DocListing({ doctorData }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center border h-96 md:h-96 mt-16 bg-white border-gray-300 rounded-md mx-auto w-2/3 px-4">
+    <div className="flex flex-col items-center justify-center border h-[200px] mb-8 md:h-96 mt-16 bg-white border-gray-300 rounded-md mx-auto w-2/3 px-4 shadow-xl">
       <img
         src={doctorData.image}
         alt="Doctor"
-        className="w-36 h-36 mt-4 rounded mb-4"
+        className="w-36 h-36 mt-6 rounded mb-4"
       />
       <div className="text-center">
         <h2 className="text-xl mb-2">{doctorData.fullName}</h2>
@@ -38,7 +38,7 @@ export default function DocListing({ doctorData }) {
       </div>
 
       <button
-        className="px-4 py-2 mb-4 text-white bg-blue-500 rounded"
+        className="px-4 py-2 mb-6 text-white  bg-blue-500 hover:bg-blue-700  rounded"
         onClick={handleConfirmClick}
       >
         Book Appointment
