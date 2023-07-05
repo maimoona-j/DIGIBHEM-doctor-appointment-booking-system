@@ -19,9 +19,7 @@ export default function MyAccount() {
   });
   const [bookingData, setBookingData] = useState(null);
 
-  const handleDeleteBooking = () => {
-    
-  };
+  const handleDeleteBooking = () => {};
 
   const handleConfirmBooking = (data) => {
     setBookingData(data);
@@ -43,10 +41,15 @@ export default function MyAccount() {
   return (
     <div>
       <Header />
+      <h2 className="text-3xl text-center ">My Profile</h2>
+      <p className="text-center text-gray-500 text-lg">
+        Update by clicking on desired input field and press save{" "}
+      </p>
       <EditProfile onUpdateProfile={handleUpdateProfile} />
 
       {doctorData && !showBookingForm && !showConfirmed && (
         <div>
+          <h2 className="text-3xl text-center mt-5 ">Appointment Details</h2>
           <Confirmed
             data={doctorData}
             onEditAppointment={handleDeleteBooking}

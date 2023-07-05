@@ -63,7 +63,7 @@ export default function EditProfile() {
 
   return (
     <div>
-      <div className="border border-black mx-auto w-1/2 p-4 mt-4 mb-4">
+      <div className="border border-gray-300 bg-white rounded-md mx-auto w-1/2 p-4 mt-4 mb-4">
         <form>
           <div className="my-4">
             <label htmlFor="fullName" className="text-lg">

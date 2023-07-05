@@ -2,7 +2,7 @@ export default function Confirmed({ data }) {
   const { fullName, fee, image } = data;
 
   return (
-    <div className="border border-black mx-auto mt-11 w-1/2">
+    <div className="border border-gray-300 bg-white rounded-md mx-auto mt-11 w-1/2">
       <div className="flex flex-col md:flex-row items-center border-b p-4">
         <img
           src={image}

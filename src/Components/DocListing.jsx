@@ -15,7 +15,7 @@ export default function DocListing({ doctorData }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center border h-96 md:h-96 mt-16 border-black mx-auto w-2/3 px-4">
+    <div className="flex flex-col items-center justify-center border h-96 md:h-96 mt-16 bg-white border-gray-300 rounded-md mx-auto w-2/3 px-4">
       <img
         src={doctorData.image}
         alt="Doctor"

@@ -5,7 +5,7 @@ import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 export default function DoctorInfo() {
-  const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(true);
   const [showOnline, setShowOnline] = useState(false);
   const [doctorProfile, setDoctorProfile] = useState([]);
 

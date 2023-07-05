@@ -1,5 +1,10 @@
 import React from "react";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithRedirect,
+  getRedirectResult,
+} from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 
 import { db } from "../firebase";
@@ -12,26 +17,48 @@ export default function OAuth() {
     try {
       const auth = getAuth();
       const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
 
-      // check for the user
-      const docRef = doc(db, "users", user.uid);
-      const docSnap = await getDoc(docRef);
-
-      if (!docSnap.exists()) {
-        await setDoc(docRef, {
-          name: user.displayName,
-          email: user.email,
-          timestamp: serverTimestamp(),
-        });
-      }
-
-      navigate("/home");
+      // Initiate the sign-in process with redirect
+      await signInWithRedirect(auth, provider);
     } catch (error) {
       console.log("Something went wrong with the registration:", error);
     }
   }
+
+  React.useEffect(() => {
+    // Listen for the redirect result
+    const handleRedirectResult = async () => {
+      try {
+        const auth = getAuth();
+
+        // Complete the sign-in process
+        await getRedirectResult(auth);
+
+        // Get the authenticated user
+        const user = auth.currentUser;
+
+        if (user) {
+          // Check for the user
+          const docRef = doc(db, "users", user.uid);
+          const docSnap = await getDoc(docRef);
+
+          if (!docSnap.exists()) {
+            await setDoc(docRef, {
+              name: user.displayName,
+              email: user.email,
+              timestamp: serverTimestamp(),
+            });
+          }
+
+          navigate("/home");
+        }
+      } catch (error) {
+        console.log("Something went wrong with the redirect result:", error);
+      }
+    };
+
+    handleRedirectResult();
+  }, [navigate]);
 
   return (
     <div>
