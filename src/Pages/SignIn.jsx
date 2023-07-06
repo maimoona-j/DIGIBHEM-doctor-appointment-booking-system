@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 
-import OAuth from "../Components/OAuth";
+ 
 import logo from "../images/logo.svg";
 import bg1 from "../images/bg1.jpg";
 
@@ -95,11 +95,6 @@ export default function SignIn() {
               <button className="bg-sky-500 text-white px-4 py-2 rounded w-72 md:w-96 shadow-md">
                 Sign In
               </button>
-
-              <div className="flex my-4 before:border-t items-center before:flex-1 before:border-gray-300 after:flex-1 after:border-gray-300">
-                <p className="text-center font-semibold mx-4 text-white">OR</p>
-              </div>
-              <OAuth />
             </form>
           </div>
         </div>

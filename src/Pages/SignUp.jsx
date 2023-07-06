@@ -9,7 +9,6 @@ import {
 import { db } from "../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
-import OAuth from "../Components/OAuth";
 import logo from "../images/logo.svg";
 import bg1 from "../images/bg1.jpg";
 
@@ -132,10 +131,6 @@ export default function SignUp() {
               <button className="bg-sky-500 text-white px-4 py-2 rounded w-72 md:w-96 shadow-md">
                 Signup
               </button>
-              <div className="flex my-4 border-t border-gray-300 items-center">
-                <p className="text-center font-semibold mx-4">OR</p>
-              </div>
-              <OAuth />
             </form>
           </div>
         </div>
