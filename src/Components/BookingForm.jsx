@@ -6,7 +6,6 @@ import { collection, addDoc } from "firebase/firestore";
 
 export default function BookingForm() {
   const navigate = useNavigate();
-
   const [fullName, setFullName] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [gender, setGender] = useState("");
@@ -60,6 +59,7 @@ export default function BookingForm() {
     }
   };
 
+  
   const handleEditAppointment = () => {
     setIsBookingConfirmed(false);
     setShowConfirmationAlert(false);
@@ -216,6 +216,7 @@ export default function BookingForm() {
           </div>{" "}
           <button
             type="submit"
+      
             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded md:ml-56 mt-4 md:mt-0"
           >
             Confirm Booking{" "}

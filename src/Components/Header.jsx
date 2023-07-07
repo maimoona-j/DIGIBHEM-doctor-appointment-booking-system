@@ -71,6 +71,7 @@ export default function Header() {
               >
                 Doctor
               </li>
+               
               <li
                 className="px-4 py-2 cursor-pointer text-white hover:bg-sky-600"
                 onClick={handleProfileClick}
@@ -96,7 +97,7 @@ export default function Header() {
         </ul>
       </div>
       <button
-        className="ml-4 mr-6 mt-6 w-36 h-12 bg-white hover:bg-sky-500 text-black  rounded"
+        className="ml-4 mr-6 mt-6 w-36 h-10 bg-white hover:bg-sky-500 text-black  rounded"
         onClick={handleLogOutClick}
       >
         Sign Out

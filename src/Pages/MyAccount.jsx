@@ -41,7 +41,7 @@ export default function MyAccount() {
   return (
     <div>
       <Header />
-      <h2 className="text-3xl text-center ">My Profile</h2>
+      <h2 className="text-3xl text-center mt-6 ">My Profile</h2>
       <p className="text-center text-gray-500 text-lg">
         Update by clicking on desired input field and press save{" "}
       </p>
@@ -87,5 +87,7 @@ export default function MyAccount() {
     </div>
   );
 }
+
+ 
 
  

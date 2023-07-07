@@ -1,13 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
- 
 
 // pages
 import Welcome from "./Pages/Welcome";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
-
 import Home from "./Pages/Home";
 import DoctorInfo from "./Pages/DoctorInfo";
 import MyAccount from "./Pages/MyAccount";
@@ -31,8 +29,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
- 
