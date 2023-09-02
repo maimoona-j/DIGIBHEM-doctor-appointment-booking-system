@@ -7,3 +7,17 @@
 body{
     background-color: rgb(222, 236, 248);
 }
+
+
+
+/* Add this to your CSS */
+.animate-slide-in {
+  opacity: 0;
+  transform: translateX(-100px); /* Start off-screen to the left */
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.animate-slide-in.animated {
+  opacity: 1;
+  transform: translateX(0); /* Slide in to the original position */
+}

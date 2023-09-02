@@ -15,6 +15,10 @@ export default function Header() {
   const handleDoctorClick = () => {
     navigate("/doctor");
   };
+
+  const handleAppointmentClick = () => {
+    navigate("/booked");
+  };
   const handleProfileClick = () => {
     navigate("/profile");
   };
@@ -27,7 +31,7 @@ export default function Header() {
   };
 
   return (
-    <div className="flex bg-sky-700 sticky top-0 z-40 h-24">
+    <div className="flex bg-blue-800 sticky top-0 z-40 h-24">
       <div>
         <img
           src={logo}
@@ -71,6 +75,13 @@ export default function Header() {
               >
                 Doctor
               </li>
+
+              <li
+                className="px-4 py-2 cursor-pointer text-white hover:bg-sky-600"
+                onClick={handleAppointmentClick}
+              >
+              Appointments
+              </li>
                
               <li
                 className="px-4 py-2 cursor-pointer text-white hover:bg-sky-600"
@@ -90,6 +101,9 @@ export default function Header() {
           </li>
           <li className="ml-8" onClick={handleDoctorClick}>
             Doctor
+          </li>
+          <li className="ml-8" onClick={handleAppointmentClick}>
+         Appointments
           </li>
           <li className="ml-8" onClick={handleProfileClick}>
             My Account

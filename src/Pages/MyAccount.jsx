@@ -5,6 +5,7 @@ import Confirmed from "../Components/Confirmed";
 import Header from "../Components/Header";
 import { useLocation } from "react-router-dom";
 import EditProfile from "../Components/EditProfile";
+import Footer from "../Components/Footer";
 
 export default function MyAccount() {
   const location = useLocation();
@@ -39,9 +40,11 @@ export default function MyAccount() {
   const doctorData = location.state && location.state.doctorData;
 
   return (
-    <div>
+    <div className="h-96">
       <Header />
-      <h2 className="text-3xl text-center mt-6 ">My Profile</h2>
+      <div className="h-[1000px]">
+
+      <h2 className="text-3xl text-center font-bold mt-6 ">My Profile</h2>
       <p className="text-center text-gray-500 text-lg">
         Update by clicking on desired input field and press save{" "}
       </p>
@@ -84,6 +87,9 @@ export default function MyAccount() {
           onCancelAppointment={handleCancelAppointment}
         />
       )}
+      </div>
+    
+      <Footer/>
     </div>
   );
 }

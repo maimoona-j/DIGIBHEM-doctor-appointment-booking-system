@@ -11,6 +11,9 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../images/logo.svg";
 import bg1 from "../images/bg1.jpg";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -40,9 +43,7 @@ export default function SignUp() {
 
     try {
       const auth = getAuth();
-
       const emailExists = await fetchSignInMethodsForEmail(auth, email);
-
       if (emailExists.length > 0) {
         alert("Email already exists.");
         return;
@@ -58,7 +59,6 @@ export default function SignUp() {
       });
 
       const { user } = userCredential;
-
       const formDataCopy = {
         name,
         email,
@@ -66,9 +66,9 @@ export default function SignUp() {
       };
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
-
-      alert("Registration successful!");
-
+      toast.success('Patient added successfully!', {
+        position: toast.POSITION.TOP_CENTER,
+      });
       navigate("/home");
     } catch (error) {
       console.log("Something went wrong with the registration:", error);
@@ -135,6 +135,7 @@ export default function SignUp() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

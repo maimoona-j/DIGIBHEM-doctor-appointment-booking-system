@@ -9,6 +9,8 @@ import SignUp from "./Pages/SignUp";
 import Home from "./Pages/Home";
 import DoctorInfo from "./Pages/DoctorInfo";
 import MyAccount from "./Pages/MyAccount";
+import RegisterDoctor from "./Pages/RegisterDoctor";
+import Booked from "./Pages/Booked";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
 
           <Route path="/home" element={<Home />} />
           <Route path="/doctor" element={<DoctorInfo />} />
+          <Route path="/registerdoctor" element={<RegisterDoctor />} />
+          <Route path="/booked" element={<Booked />} />
           <Route path="/profile" element={<MyAccount />} />
         </Routes>
       </Router>
@@ -29,3 +33,6 @@ function App() {
 }
 
 export default App;
+
+
+ 
