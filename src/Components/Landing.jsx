@@ -15,7 +15,6 @@ export default function Landing() {
     navigate("/registerdoctor");
   };
 
-  
   React.useEffect(() => {
     AOS.init({
       duration: 800,
@@ -25,6 +24,7 @@ export default function Landing() {
       AOS.refresh();
     };
   }, []);
+
   return (
     <div data-aos="fade-up">
       <div
@@ -36,22 +36,22 @@ export default function Landing() {
           backgroundPosition: "center",
         }}
       >
-        <div className="text-center mb-36">
+        <div className="text-center mx-4 md:mx-0 mb-16 md:mb-36">
           <div className="text-white">
-            <h1 className="mb-6 text-6xl  tracking-wider font-bold">
+            <h1 className="mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider font-bold">
               Get ahead of the line with <br /> online Appointments!
             </h1>
 
-            <div className="mt-10">
+            <div className="mt-6 sm:mt-8 md:mt-10">
               <button
-                className="bg-blue-800  hover:bg-blue-400 w-56 p-3 m-3 rounded text-center"
+                className="bg-blue-800 hover:bg-blue-400 w-full sm:w-56 p-3 m-2 sm:m-3 rounded text-center"
                 onClick={handleDoctorClick}
               >
                 Find a Doctor
               </button>
 
               <button
-                className="bg-blue-800  hover:bg-blue-400 w-56 p-3 m-3 rounded text-center"
+                className="bg-blue-800 hover:bg-blue-400 w-full sm:w-56 p-3 m-2 sm:m-3 rounded text-center"
                 onClick={handleDoctorRegisterClick}
               >
                 Register as a Doctor
