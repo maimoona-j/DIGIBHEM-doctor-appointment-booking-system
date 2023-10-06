@@ -40,7 +40,7 @@ export default function MyAccount() {
   const doctorData = location.state && location.state.doctorData;
 
   return (
-    <div className="h-96">
+    <div className="h-auto">
       <Header />
       <div className="h-[1000px]">
 
