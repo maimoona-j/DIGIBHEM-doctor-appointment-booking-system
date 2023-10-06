@@ -77,7 +77,8 @@ export default function Categories() {
             <h3 className="text-white sm:ml-16 lg:ml-16 lg:mt-16    md:ml-10 mt-4 md:mt-6 group-hover:opacity-0">
               {department.name}
             </h3>
-            <button className="absolute w-36 md:w-44 p-1 lg:ml-6 bottom-4 md:bottom-6 rounded left-3 right-0 bg-red-600 text-white py-2 hover:bg-red-700 transition duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+            <button className="absolute w-36 md:w-44 p-1 lg:ml-6 sm:ml-2 ml-4 bottom-4 md:bottom-6 rounded sm:left-2 left-3 lg:left-3 right-0
+             bg-red-600 text-white py-2 hover:bg-red-700 transition duration-300 ease-in-out opacity-0 group-hover:opacity-100">
               Find Doctor
             </button>
           </div>

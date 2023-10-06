@@ -2,8 +2,10 @@ import React from "react";
 import doc1 from "../images/doc1.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
 export default function BestDoctor() {
+  const navigate = useNavigate();
   React.useEffect(() => {
     AOS.init({
       duration: 800,
@@ -13,6 +15,10 @@ export default function BestDoctor() {
       AOS.refresh();
     };
   }, []);
+
+  const handleDoctor = () => {
+    navigate("/doctor");
+  };
 
   return (
     <div data-aos="fade-up">
@@ -41,7 +47,8 @@ export default function BestDoctor() {
             expedita, itaque deserunt iure molestias, aut eligendi sunt ad eum
             animi voluptate sed!
           </p>
-          <button className="bg-red-600 hover:bg-gray-400 hover:text-black text-white font-bold h-12 p-3 rounded mt-3 md:ml-0 w-full md:w-auto text-center">
+          <button className="bg-red-600 hover:bg-gray-400 hover:text-black text-white font-bold h-12 p-3
+           rounded mt-3 md:ml-0 w-full  text-center" onClick={handleDoctor}>
             Book an Appointment
           </button>
         </div>
